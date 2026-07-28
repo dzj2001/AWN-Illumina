@@ -40,7 +40,7 @@ BINARY	NEG, POS	二分类（是否存在SV）
 数据预处理、模型训练、模型推理操作流程与 PacBio 版本完全一致，详见个人主页中的AWN-PacBio使用指南。
 
 ####  配置文件注意事项： ####  
-#### PacBio 版本（长读长）：#### 
+#### PacBio 版本（长读长）： #### 
 
 bam_type: "LONG"
 
@@ -48,7 +48,7 @@ signal_set: "LONG"
 
 signal_set_origin: "LONG"
 
-#### Illumina 版本（短读长）需修改为：#### 
+#### Illumina 版本（短读长）需修改为： #### 
 
 bam_type: "SHORT"
 
