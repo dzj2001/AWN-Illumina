@@ -1,1 +1,16 @@
+#### REQUIRED ####
+bam: "/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/10x/Chr6D/output_prefix.sorted.bam"  # path to the alignments file (BAM/CRAM format)
+fai: "/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/10x/Chr6D/ref_wheat.fa.fai"  # path to the reference FASTA FAI file
+#### OPTIONAL ####
+n_cpus: 64
+class_set: "BASIC4"
+chr_names: ["Chr6D"]  # list of chromosomes to process: null (all) or a specific list e.g. ["chr1", "chr21"]
+logging_level: "INFO"  # verbosity level (set to "ERROR" to reduce logging volume)
 
+#nohup python /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/cue/engine/call.py --data_config /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/10x/Chr6D/data.yaml --model_config /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/10x/Chr6D/model.yaml 2> generate.log &
+#ps aux | grep call.py
+#conda activate cue
+#cd /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/10x/Chr6D
+#cd ../
+#head -n 1000000000000000 generate.log
+#head -n 1000000000000000 nohup.out
