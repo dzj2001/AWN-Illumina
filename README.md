@@ -11,7 +11,7 @@ AWN（短读长版本）适配于 Illumina 二代测序平台，核心模型为 
 ####  二、分类集合说明（class_set）
 配置文件中的 class_set参数用于指定模型训练的 SV 分类粒度，支持以下选项（以下配置项在 PacBio 与 Illumina 两个版本中完全通用，使用时保持一致即可）：
 #### class_set        类别           说明 #### 
-#### BASIC4 #### 	NEG, DEL, INV, DUP	基础4类
+BASIC4 NEG, DEL, INV, DUP	基础4类
 
 BASIC5	NEG, DEL, INV, DUP, IDUP	基础5类（含串联重复）
 
@@ -29,6 +29,8 @@ BASIC7ZYG	在7类基础上增加各类型HOM/HET	7类+合子性
 
 BINARY	NEG, POS	二分类（是否存在SV）
 
+说明：NEG 表示阴性（无SV）；HOM 表示纯合，HET 表示杂合；ZYG 后缀表示带合子性信息的分类集。
+
 
 ####  三、代码使用说明
 本版本与 PacBio 版本共享同一套核心代码框架，只需替换模型文件即可切换：
@@ -37,4 +39,21 @@ BINARY	NEG, POS	二分类（是否存在SV）
 
 数据预处理、模型训练、模型推理操作流程与 PacBio 版本完全一致，详见个人主页中的AWN-PacBio使用指南。
 
-配置文件注意事项：
+####  配置文件注意事项： ####  
+PacBio 版本（长读长）：
+
+bam_type: "LONG"
+
+signal_set: "LONG"
+
+signal_set_origin: "LONG"
+
+Illumina 版本（短读长）需修改为：
+
+bam_type: "SHORT"
+
+signal_set: "SHORT"
+
+signal_set_origin: "SHORT"
+
+其余配置参数（图像生成、训练超参等）保持不变。
