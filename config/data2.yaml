@@ -1,0 +1,44 @@
+#### REQUIRED ####
+bam: "/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/30x/output_prefix.sorted.bam"  # path to the alignments BAM file
+fai: "/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/30x/ref_wheat.fa.fai"  # path to the referene FASTA FAI file
+bed: "/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/30x/Chr1A_simulated.vcf"
+
+#### OPTIONAL ####
+n_cpus: 40
+chr_names: ["Chr1A"]
+logging_level: "INFO"
+store_img: True
+allow_empty: False
+scan_target_intervals: False
+stream: False
+bins_per_block: 8000
+min_pair_support: 2
+min_pair_distance: 4000
+max_pair_distance: 1000000
+#### FIXED PARAMS (do not modify) ####
+bam_type: "SHORT"
+signal_set: "SHORT"
+signal_set_origin: "SHORT"
+blacklist_bed: null
+
+signal_vmax: {"RD": 600, "RD_LOW": 800, "RD_CLIPPED": 600, "SM": 200, "SR_RP": 600, "LR": 600, "LLRR": 100, "RL": 100, "LLRR_VS_LR": 1}
+signal_mapq: {"RD": 20, "RD_LOW": 0, "RD_CLIPPED": 20, "SM": 20, "SR_RP": 0, "LR": 0, "LLRR": 1, "RL": 1, "LLRR_VS_LR": 1}
+
+### Interval Configuration ###
+bin_size: 750
+interval_size: 150000
+step_size: 50000
+shift_size: [0]
+### Image Generation ###
+heatmap_dim: 1000
+image_dim: 256
+class_set: "BASIC4"
+num_keypoints: 1
+bbox_padding: 0
+# 设置为True以不在图片上显示标注
+empty_annotation: True
+
+
+#conda activate cue
+#nohup python /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/cue/engine/generate.py --config /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/dzjtest_xiaomai3/data2.yaml 2> generate.log &
+

@@ -1,0 +1,28 @@
+#### REQUIRED ####
+#dataset_dirs: ["/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/dzjtest_xiaomai"]
+dataset_dirs: ["/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/30x/unannotated_train"]
+num_epochs: 32  # number of epochs
+#### OPTIONAL ####
+batch_size: 16  # number of images per batch
+#gpu_ids: [0] # id of the GPU to use for training
+gpu_ids: [1, 2, 3]
+n_cpus: 40
+pretrained_model: null
+logging_level: "INFO"  # verbosity level (set to "ERROR" to reduce logging volume)
+report_interval: 50   # frequency (in number of batches) for reporting training stats and predictions
+model_checkpoint_interval: 10000  # how often to checkpoint the model as it trains
+validation_ratio: 0.1  # fraction of the data to use for validation
+plot_confidence_maps: False  # output the predicted confidence maps
+learning_rate: 0.0001
+learning_rate_decay_interval: 5
+learning_rate_decay_factor: 1
+sigma: 10
+stride: 4
+heatmap_peak_threshold: 0.4
+class_set: "BASIC4"
+
+#conda activate cue
+
+#nohup python /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/cue2/engine/train.py --config /mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/30x/unannotated_train/train2/train2.yaml > train2.log 2>&1 &
+#ps aux | grep train.py
+

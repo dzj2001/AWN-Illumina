@@ -1,0 +1,15 @@
+#### REQUIRED ####
+model_path: "/mnt/mnt_data/dzj_dirs/mnt/mnt_data/dzj_dirs/10x/Chr6D/model.pt"  # path to the pretrained Cue model
+#### OPTIONAL ####
+#gpu_ids: [0] # id of the GPU to use for training
+#n_cpus: 40
+#n_jobs_per_gpu: 1 # how many parallel jobs to launch on the same GPU
+#report_interval: 100  # frequency (in number of batches) for reporting image predictions
+#batch_size: 16  # number of images per batch
+#class_set: "BASIC4"
+
+##### OPTIONAL ####
+n_cpus: 64  # number of CPUs to use for calling if no GPUs are listed
+class_set: "BASIC4"
+
+
