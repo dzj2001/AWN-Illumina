@@ -11,7 +11,23 @@ AWN（短读长版本）适配于 Illumina 二代测序平台，核心模型为 
 ####  二、分类集合说明（class_set）
 配置文件中的 class_set参数用于指定模型训练的 SV 分类粒度，支持以下选项（以下配置项在 PacBio 与 Illumina 两个版本中完全通用，使用时保持一致即可）：
 #### class_set        类别           说明 #### 
+BASIC4	NEG, DEL, INV, DUP	基础4类
 
+BASIC5	NEG, DEL, INV, DUP, IDUP	基础5类（含串联重复）
+
+BASIC6	NEG, DEL, INV, DUP, INVDEL	基础6类（含缺失侧翼倒置）
+
+BASIC7	NEG, DEL, INV, DUP, IDUP, INVDEL	基础7类（含IDUP+INVDEL）
+
+BASIC4ZYG	NEG, DEL-HOM, INV-HOM, DUP-HOM, DEL-HET, INV-HET, DUP-HET	4类+合子性
+
+BASIC5ZYG	在4类基础上增加 IDUP-HOM, IDUP-HET	5类+合子性
+
+BASIC6ZYG	在6类基础上增加 INVDEL-HOM, INVDEL-HET	6类+合子性
+
+BASIC7ZYG	在7类基础上增加各类型HOM/HET	7类+合子性
+
+BINARY	NEG, POS	二分类（是否存在SV）
 
 
 ####  三、代码使用说明
